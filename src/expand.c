@@ -1686,7 +1686,7 @@ static char *expmeta(char *name, unsigned name_len, size_t expdir_len)
 			goto out_opendir;
 		enddir = expmeta_rmescapes(enddir, name);
 		if (lstat64(cp, &statb) >= 0)
-			cp = addfnamealt(enddir, expdir_len);
+			cp = addfnamealt(enddir + 1, expdir_len);
 		goto out_opendir;
 	}
 	start = memrchr(name, '/', p - name);
