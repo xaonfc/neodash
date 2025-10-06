@@ -339,7 +339,7 @@ unsigned conv_escape(char *str0, char *out0, bool mbchar)
 
 	switch (ch) {
 	default:
-		if (ch == '"' || ch == '\'')
+		if (mbchar && (ch == '"' || ch == '\''))
 			break;
 
 		if (ch == 'U') {
