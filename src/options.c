@@ -1,11 +1,13 @@
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
- * Copyright (c) 1997-2005
- *	Herbert Xu <herbert@gondor.apana.org.au>.  All rights reserved.
- *
- * This code is derived from software contributed to Berkeley by
- * Kenneth Almquist.
+  * Copyright (c) 1997-2005
+  * 	Herbert Xu <herbert@gondor.apana.org.au>.  All rights reserved.
+  * Copyright (c) 2025
+  * 	xaonfc (Mario) <237485123+xaonfc@users.noreply.github.com>. All rights reserved.
+  *
+  * This code is derived from software contributed to Berkeley by
+  * Kenneth Almquist.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
