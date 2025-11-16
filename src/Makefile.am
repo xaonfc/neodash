@@ -14,7 +14,7 @@ COMPILE_FOR_BUILD = \
 	$(CPPFLAGS_FOR_BUILD) \
 	$(AM_CFLAGS_FOR_BUILD) $(CFLAGS_FOR_BUILD) 
 
-bin_PROGRAMS = dash
+bin_PROGRAMS = neodash
 
 dash_CFILES = \
 	alias.c arith_yacc.c arith_yylex.c cd.c error.c eval.c exec.c expand.c \
@@ -30,6 +30,9 @@ dash_SOURCES = \
 	show.h system.h trap.h var.h
 dash_LDADD = builtins.o init.o nodes.o signames.o syntax.o
 
+neodash_SOURCES = $(dash_SOURCES)
+neodash_LDADD = $(dash_LDADD)
+
 HELPERS = mkinit mksyntax mknodes mksignames
 
 BUILT_SOURCES = builtins.h nodes.h syntax.h token.h token_vars.h
@@ -37,7 +40,7 @@ CLEANFILES = \
 	$(BUILT_SOURCES) $(patsubst %.o,%.c,$(dash_LDADD)) \
 	$(HELPERS) builtins.def
 
-man_MANS = dash.1
+man_MANS = neodash.1
 EXTRA_DIST = \
 	$(man_MANS) \
 	mktokens mkbuiltins builtins.def.in mkinit.c \

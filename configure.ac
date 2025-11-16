@@ -1,4 +1,4 @@
-AC_INIT([dash],[0.5.13.1])
+AC_INIT([neodash],[0.5.13.1])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_CONFIG_SRCDIR([src/main.c])
 
@@ -188,7 +188,8 @@ AC_MSG_RESULT($(expr yes \& $have_dupfd_cloexec \| no))
 AC_DEFINE_UNQUOTED([HAVE_F_DUPFD_CLOEXEC], [$have_dupfd_cloexec],
 	[Define to 1 your system supports F_DUPFD_CLOEXEC])
 
-AC_ARG_WITH(libedit, AS_HELP_STRING(--with-libedit, [Compile with libedit support]))
+AC_ARG_WITH(libedit, AS_HELP_STRING(--with-libedit, [Compile with libedit support (default)]),
+	    , [with_libedit=yes])
 use_libedit=
 if test "$with_libedit" = "yes"; then
 	AC_CHECK_LIB(edit, history_init, [

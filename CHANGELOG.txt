@@ -1,0 +1,6 @@
+neodash Change Log
+
+2025-11-16 - Renaming and Feature Implementation
+    * Project renamed from "dash" to "neodash".
+    * Arrow key movement (line editing) enabled by default in interactive shells.
+    * libedit support is now a default build option (no longer requires --with-libedit).
