@@ -97,10 +97,13 @@ savestr(const char *s)
  *
  * The size 504 was chosen because the Ultrix malloc handles that size
  * well.
+ *
+ * Now we use 4096 because this should give the stack allocator a much larger
+ * initial block to work with, hopefully reducing reallocations.
  */
 
 /* minimum size of a block */
-#define MINSIZE SHELL_ALIGN(504)
+#define MINSIZE SHELL_ALIGN(4096)
 
 struct stack_block {
 	struct stack_block *prev;
