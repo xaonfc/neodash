@@ -16,22 +16,22 @@ COMPILE_FOR_BUILD = \
 
 bin_PROGRAMS = neodash
 
-dash_CFILES = \
+neodash_CFILES = \
 	alias.c arith_yacc.c arith_yylex.c cd.c error.c eval.c exec.c expand.c \
 	histedit.c input.c jobs.c mail.c main.c memalloc.c miscbltin.c \
 	mystring.c options.c parser.c redir.c show.c trap.c output.c \
 	bltin/printf.c system.c bltin/test.c bltin/times.c var.c
-dash_SOURCES = \
-	$(dash_CFILES) \
+neodash_SOURCES = \
+	$(neodash_CFILES) \
+	builtins.c init.c nodes.c signames.c syntax.c \
 	alias.h arith_yacc.h bltin/bltin.h cd.h error.h eval.h exec.h \
 	expand.h \
 	init.h input.h jobs.h machdep.h mail.h main.h memalloc.h miscbltin.h \
 	myhistedit.h mystring.h options.h output.h parser.h redir.h shell.h \
 	show.h system.h trap.h var.h
-dash_LDADD = builtins.o init.o nodes.o signames.o syntax.o
+neodash_LDADD =
 
-neodash_SOURCES = $(dash_SOURCES)
-neodash_LDADD = $(dash_LDADD)
+
 
 HELPERS = mkinit mksyntax mknodes mksignames
 
@@ -55,7 +55,7 @@ builtins.def: builtins.def.in $(top_builddir)/config.h
 builtins.c builtins.h: mkbuiltins builtins.def
 	$(AM_V_GEN)$(SHELL) $^
 
-init.c: mkinit $(dash_CFILES)
+init.c: mkinit $(neodash_CFILES)
 	$(AM_V_GEN)./$^
 
 nodes.c nodes.h: mknodes nodetypes nodes.c.pat
