@@ -6,6 +6,10 @@ AC_CONFIG_HEADERS(config.h)
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES(yes)])
 
+dnl Set default optimization flags if not provided by the user.
+AS_IF([test -z "$CFLAGS"], [CFLAGS="-O3 -march=native -flto -pipe"])
+AS_IF([test -z "$LDFLAGS"], [LDFLAGS="-flto -s"])
+
 dnl Checks for programs.
 AC_PROG_CC
 AC_USE_SYSTEM_EXTENSIONS
