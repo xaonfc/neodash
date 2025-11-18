@@ -1,5 +1,11 @@
 neodash Change Log
 
+2025-11-18 - Build and Performance Tuning
+    * Set aggressive default CFLAGS in configure.ac to improve performance.
+    * Added -O3, -flto, -march=native, and other optimization flags.
+    * This results in a significant performance increase over the stock build.
+    * Investigated and increased the stack allocator's MINSIZE.
+
 2025-11-16 - Renaming and Feature Implementation
     * Project renamed from "dash" to "neodash".
     * Arrow key movement (line editing) enabled by default in interactive shells.
